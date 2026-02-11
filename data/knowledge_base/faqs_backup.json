@@ -1,0 +1,184 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "category": "Technical",
+      "question": "Why does my app keep crashing?",
+      "answer": "App crashes can be caused by several factors: 1) Outdated app version - Update to the latest version from the app store. 2) Low device storage - Clear cache and free up at least 500MB. 3) Conflicting apps - Close background apps. 4) Corrupted data - Try clearing app data in Settings > Apps. 5) Device compatibility - Check minimum requirements. If the issue persists after trying these steps, please contact support with your device model and OS version."
+    },
+    {
+      "id": 2,
+      "category": "Technical",
+      "question": "How do I fix login issues?",
+      "answer": "To resolve login problems: 1) Verify your email and password are correct. 2) Clear browser cache and cookies. 3) Try a different browser or incognito mode. 4) Disable browser extensions temporarily. 5) Check if Caps Lock is on. 6) Reset your password if needed. 7) Ensure your account isn't locked (check your email for notifications). If you still can't log in, contact support with your registered email address."
+    },
+    {
+      "id": 3,
+      "category": "Technical",
+      "question": "My data isn't syncing across devices",
+      "answer": "For sync issues: 1) Ensure you're logged into the same account on all devices. 2) Check your internet connection. 3) Verify sync is enabled in Settings > Sync. 4) Force sync by pulling down to refresh. 5) Log out and log back in on the affected device. 6) Update the app to the latest version. 7) Check if you have sufficient cloud storage. Sync typically takes 1-5 minutes depending on data size."
+    },
+    {
+      "id": 4,
+      "category": "Technical",
+      "question": "How do I export my data?",
+      "answer": "To export your data: 1) Go to Settings > Data Export. 2) Select the data type (all data, specific categories, or date range). 3) Choose export format (CSV, JSON, or PDF). 4) Click 'Export Data'. 5) You'll receive a download link via email within 24 hours. 6) The link expires in 7 days. For large datasets (>5GB), export may take up to 48 hours. You can export data once every 30 days."
+    },
+    {
+      "id": 5,
+      "category": "Technical",
+      "question": "The app is running very slow",
+      "answer": "To improve app performance: 1) Close other running apps to free up memory. 2) Clear app cache: Settings > Apps > [App Name] > Clear Cache. 3) Restart your device. 4) Update to the latest app version. 5) Check available storage (need at least 1GB free). 6) Disable animations in Settings if on an older device. 7) Check your internet speed (minimum 5 Mbps recommended). 8) Reduce background sync frequency in Settings."
+    },
+    {
+      "id": 6,
+      "category": "Technical",
+      "question": "How do I recover deleted items?",
+      "answer": "To recover deleted items: 1) Check the Trash/Recycle Bin in the app (items kept for 30 days). 2) Go to Settings > Deleted Items. 3) Select items to restore. 4) Click 'Restore'. Items return to their original location. After 30 days, items are permanently deleted and cannot be recovered. For premium users, backup history extends to 90 days. Contact support within 24 hours of deletion for possible emergency recovery."
+    },
+    {
+      "id": 7,
+      "category": "Technical",
+      "question": "I'm getting error code 500",
+      "answer": "Error 500 indicates a server issue: 1) This is usually temporary - wait 5-10 minutes and try again. 2) Check our status page at status.example.com for ongoing issues. 3) Clear browser cache and cookies. 4) Try a different network (switch from WiFi to mobile data). 5) If persists, it may be scheduled maintenance (check your email). Our team is automatically notified of 500 errors. For urgent issues, contact support with the exact error message and timestamp."
+    },
+    {
+      "id": 8,
+      "category": "Technical",
+      "question": "How do I enable two-factor authentication?",
+      "answer": "To enable 2FA: 1) Go to Settings > Security > Two-Factor Authentication. 2) Click 'Enable 2FA'. 3) Choose your method: SMS, Authenticator App, or Email. 4) For Authenticator: Scan the QR code with Google Authenticator or Authy. 5) Enter the 6-digit code to verify. 6) Save your backup codes in a safe place. 7) You'll need to enter a code each time you log in from a new device. Highly recommended for security."
+    },
+    {
+      "id": 9,
+      "category": "Technical",
+      "question": "Can I use the app offline?",
+      "answer": "Yes, limited offline functionality is available: 1) Downloaded content can be accessed offline. 2) Changes made offline sync when you reconnect. 3) To enable: Settings > Offline Mode > ON. 4) Download specific items by tapping the download icon. 5) Offline storage limit: Free (2GB), Premium (10GB), Enterprise (Unlimited). 6) Some features require internet: real-time collaboration, video streaming, and live updates. Last synced data shows timestamp."
+    },
+    {
+      "id": 10,
+      "category": "Technical",
+      "question": "How do I update the app?",
+      "answer": "To update the app: iOS: 1) Open App Store. 2) Tap your profile icon. 3) Scroll to available updates. 4) Tap 'Update' next to the app. Android: 1) Open Google Play Store. 2) Tap Menu > My Apps. 3) Find the app and tap 'Update'. Desktop: App auto-updates or check Settings > About > Check for Updates. Enable auto-updates in your device settings for seamless updates. Current version always shown in Settings > About."
+    },
+    {
+      "id": 11,
+      "category": "Billing",
+      "question": "Why was I charged twice this month?",
+      "answer": "Double charges can occur due to: 1) Overlapping subscription cycles if you upgraded mid-month. 2) Payment method failure followed by successful retry. 3) Switching between monthly and annual plans. 4) App store charges plus our charges if subscribed through multiple platforms. Check your billing history in Settings > Billing. Duplicate charges are automatically refunded within 5-7 business days. If you see an unauthorized charge, contact support immediately with transaction ID and date."
+    },
+    {
+      "id": 12,
+      "category": "Billing",
+      "question": "How do I cancel my subscription?",
+      "answer": "To cancel your subscription: Web: Settings > Subscription > Cancel Subscription. iOS: Settings > Apple ID > Subscriptions > Select App > Cancel. Android: Play Store > Subscriptions > Select App > Cancel. Your access continues until the end of current billing period. No refunds for unused time. You can reactivate anytime. Cancel at least 24 hours before renewal to avoid next charge. Export your data before cancellation as it's deleted 30 days after."
+    },
+    {
+      "id": 13,
+      "category": "Billing",
+      "question": "Can I get a refund?",
+      "answer": "Refund policy: 1) 30-day money-back guarantee for new subscribers. 2) Request within 30 days via Settings > Billing > Request Refund. 3) Annual plans: prorated refund for remaining months. 4) Monthly plans: refund for current month only if unused. 5) App store purchases: contact Apple/Google directly. 6) Refund processed in 5-7 business days to original payment method. No refunds for violation of Terms of Service. Account access removed upon refund approval."
+    },
+    {
+      "id": 14,
+      "category": "Billing",
+      "question": "How do I change my payment method?",
+      "answer": "To update payment method: 1) Go to Settings > Billing > Payment Methods. 2) Click 'Add Payment Method'. 3) Enter new card/PayPal details. 4) Click 'Set as Primary'. 5) Optionally remove old payment method. 6) Changes take effect on next billing cycle. 7) Verify with test charge of $1 (refunded immediately). Accepted: Visa, Mastercard, Amex, Discover, PayPal. For company billing, contact enterprise@example.com for invoicing options."
+    },
+    {
+      "id": 15,
+      "category": "Billing",
+      "question": "What's included in the Premium plan?",
+      "answer": "Premium Plan includes: 1) Unlimited storage (vs 5GB free). 2) Advanced features: custom themes, priority support, offline mode. 3) Remove all ads. 4) Up to 5 team members. 5) 90-day backup history (vs 30 days). 6) Priority customer support (24-hour response). 7) Early access to new features. 8) Export in all formats. 9) API access. Price: $9.99/month or $99/year (17% savings). Free 14-day trial. Compare all plans at example.com/pricing."
+    },
+    {
+      "id": 16,
+      "category": "Billing",
+      "question": "Can I upgrade or downgrade my plan?",
+      "answer": "Yes, you can change plans anytime: Upgrade: 1) Settings > Subscription > Upgrade. 2) Choose new plan. 3) Pay prorated difference immediately. 4) New features activate instantly. Downgrade: 1) Settings > Subscription > Change Plan. 2) Select lower tier. 3) Change takes effect at next billing cycle. 4) No immediate charges. 5) Download data exceeding new limits before downgrade. Refunds for downgrades are prorated credits for next billing."
+    },
+    {
+      "id": 17,
+      "category": "Billing",
+      "question": "Do you offer student or non-profit discounts?",
+      "answer": "Yes! Discount programs: Students: 50% off with valid .edu email. Verify at example.com/student. Non-profits: 40% off with 501(c)(3) verification. Apply at example.com/nonprofit. Educators: 50% off for teachers K-12 and higher ed. Military: 30% off with military ID. To apply: 1) Go to Settings > Discounts. 2) Upload verification documents. 3) Approval within 2-3 business days. 4) Discount auto-renews with annual verification. Cannot combine with other offers."
+    },
+    {
+      "id": 18,
+      "category": "Billing",
+      "question": "How do I view my billing history?",
+      "answer": "To access billing history: 1) Settings > Billing > Billing History. 2) View all transactions with dates and amounts. 3) Download invoices as PDF. 4) Filter by date range or transaction type. 5) Export all history as CSV. 6) Receipts auto-sent to email on file. 7) History available for past 7 years. For accounting purposes, invoices include: transaction ID, date, amount, payment method, tax breakdown. Customize invoice details in Settings > Billing > Invoice Settings."
+    },
+    {
+      "id": 19,
+      "category": "Billing",
+      "question": "Why is my payment failing?",
+      "answer": "Payment failures can be due to: 1) Insufficient funds - check account balance. 2) Expired card - update card details. 3) Incorrect CVV or billing address. 4) Bank blocking international transactions - contact your bank. 5) Daily spending limit reached. 6) Card reported lost/stolen. To fix: Update payment method in Settings > Billing. We retry failed payments 3 times over 7 days. After that, subscription suspends. Reactivate within 30 days to avoid data loss."
+    },
+    {
+      "id": 20,
+      "category": "Billing",
+      "question": "What's your pricing for teams?",
+      "answer": "Team pricing: Small Team (up to 10 users): $15/user/month. Business (11-50 users): $12/user/month. Enterprise (50+ users): Custom pricing. Team features: Shared workspace, admin controls, team analytics, priority support, SSO, custom contracts, dedicated account manager (Enterprise). Billed annually with 15% discount or monthly. Add/remove users anytime. Only pay for active users. Free 30-day trial for teams. Contact sales@example.com for custom quotes or demo."
+    },
+    {
+      "id": 21,
+      "category": "Account",
+      "question": "How do I reset my password?",
+      "answer": "To reset your password: 1) Click 'Forgot Password' on login page. 2) Enter your registered email. 3) Check email for reset link (check spam folder). 4) Link expires in 1 hour. 5) Click link and create new password. 6) Password requirements: 8+ characters, 1 uppercase, 1 number, 1 special character. 7) Confirm new password. 8) You'll be logged out of all devices. 9) Log back in with new password. If no email received, check email address is correct or contact support."
+    },
+    {
+      "id": 22,
+      "category": "Account",
+      "question": "How do I delete my account?",
+      "answer": "Account deletion is permanent: 1) Settings > Account > Delete Account. 2) Review what will be deleted (all data, subscriptions canceled). 3) Export your data first if needed. 4) Enter password to confirm. 5) Check 'I understand this is permanent'. 6) Click 'Delete My Account'. 7) Confirmation email sent. 8) 30-day grace period - you can cancel deletion. 9) After 30 days, all data permanently deleted. Active subscriptions are canceled. No refunds for remaining time. Cannot create new account with same email for 90 days."
+    },
+    {
+      "id": 23,
+      "category": "Account",
+      "question": "Can I change my email address?",
+      "answer": "Yes, to change email: 1) Settings > Account > Email Address. 2) Enter new email. 3) Enter current password. 4) Verify new email (check inbox for verification link). 5) Click verification link within 24 hours. 6) Email updated after verification. 7) Login now uses new email. 8) All notifications sent to new address. Note: Cannot use email already associated with another account. Keep access to old email for 30 days in case of issues. Update email in app store subscription separately if applicable."
+    },
+    {
+      "id": 24,
+      "category": "Account",
+      "question": "How do I merge duplicate accounts?",
+      "answer": "To merge accounts: 1) Email support with both account emails. 2) Specify which account to keep (primary). 3) We'll send verification emails to both. 4) Confirm merge within 48 hours. 5) Data from secondary account moves to primary. 6) Secondary account deleted after merge. 7) Subscriptions: keep higher tier or most recent. 8) Process takes 2-5 business days. Cannot merge if different names/owners. Cannot undo after completion. Billing: active subscription transferred, prorated credit for duplicate."
+    },
+    {
+      "id": 25,
+      "category": "Account",
+      "question": "How do I update my profile information?",
+      "answer": "To update profile: 1) Settings > Profile. 2) Edit: Name, Photo, Bio, Location, Website. 3) Change display name (shown to other users). 4) Update phone number. 5) Set privacy preferences (public, friends, private). 6) Add social media links. 7) Click 'Save Changes'. 8) Changes reflect immediately. 9) Profile photo: max 5MB, JPG/PNG. For business accounts: add company name, tax ID, business address in Settings > Business Profile. Verify business account for trust badge."
+    },
+    {
+      "id": 26,
+      "category": "General",
+      "question": "What are your business hours?",
+      "answer": "Support hours: Email support: 24/7 (response within 24 hours). Live chat: Monday-Friday 9 AM - 6 PM EST. Phone support: Premium/Enterprise only, Monday-Friday 9 AM - 5 PM EST. Emergency support: Enterprise customers 24/7. Weekend: Email only (response by next business day). Holidays: Reduced hours (check website for holiday schedule). Best response times: Tuesday-Thursday 10 AM - 4 PM EST. For urgent issues, mark ticket as 'Urgent' or contact emergency line if Enterprise customer."
+    },
+    {
+      "id": 27,
+      "category": "General",
+      "question": "How do I contact customer support?",
+      "answer": "Contact support: 1) In-app: Settings > Help > Contact Support. 2) Email: support@example.com. 3) Live chat: Click chat icon (bottom right of website). 4) Phone: 1-800-EXAMPLE (Premium/Enterprise). 5) Help center: help.example.com (search 500+ articles). 6) Community forum: community.example.com. 7) Twitter: @ExampleSupport. Prepare: account email, description of issue, screenshots, error messages. Priority: Free (48hr), Premium (24hr), Enterprise (4hr). Emergency line for Enterprise: 1-800-URGENT-EX"
+    },
+    {
+      "id": 28,
+      "category": "General",
+      "question": "Is my data secure and private?",
+      "answer": "We take security seriously: 1) End-to-end encryption for all data in transit (TLS 1.3). 2) Encryption at rest (AES-256). 3) Regular security audits and penetration testing. 4) GDPR and CCPA compliant. 5) SOC 2 Type II certified. 6) Data centers: US, EU, Asia (choose in Settings). 7) No data sold to third parties. 8) Two-factor authentication available. 9) Staff access logs monitored. 10) Regular backups with 99.9% uptime SLA. Privacy policy: example.com/privacy. Security issues: security@example.com"
+    },
+    {
+      "id": 29,
+      "category": "General",
+      "question": "What platforms do you support?",
+      "answer": "Available on all major platforms: Mobile: iOS 14+ (iPhone, iPad), Android 9+. Desktop: Windows 10+, macOS 10.15+, Linux (Ubuntu, Fedora). Web: Chrome, Firefox, Safari, Edge (latest 2 versions). Watch: Apple Watch, Wear OS. Browser extensions: Chrome, Firefox, Safari. API: REST API for integrations. Sync across all platforms. Offline support on mobile and desktop. Features may vary by platform. Check system requirements at example.com/downloads."
+    },
+    {
+      "id": 30,
+      "category": "General",
+      "question": "Do you have an API for developers?",
+      "answer": "Yes, comprehensive API available: 1) RESTful API with JSON responses. 2) Access: Premium and Enterprise plans only. 3) Documentation: developers.example.com. 4) Authentication: OAuth 2.0 and API keys. 5) Rate limits: 1000 requests/hour (Premium), 10000/hour (Enterprise). 6) SDKs: Python, JavaScript, Ruby, PHP, Java. 7) Webhooks for real-time events. 8) Sandbox environment for testing. 9) API key in Settings > Developers > API Keys. 10) Support: developers@example.com. OpenAPI spec available. GraphQL in beta."
+    }
+  ]
+}

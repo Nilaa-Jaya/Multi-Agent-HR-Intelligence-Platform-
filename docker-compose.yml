@@ -1,0 +1,101 @@
+version: '3.8'
+
+services:
+  # FastAPI Application
+  fastapi_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smartsupport_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=sqlite:///./smartsupport.db
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      # Mount data directory for persistence
+      - ./data:/app/data
+      - ./logs:/app/logs
+      # Mount source code for development (comment out in production)
+      - ./src:/app/src
+    networks:
+      - smartsupport_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      - postgres
+      - redis
+
+  # PostgreSQL Database (optional - use for production)
+  postgres:
+    image: postgres:15-alpine
+    container_name: smartsupport_postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=smartsupport
+      - POSTGRES_USER=smartsupport_user
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme123}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - smartsupport_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U smartsupport_user -d smartsupport"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache (optional - for sessions/caching)
+  redis:
+    image: redis:7-alpine
+    container_name: smartsupport_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - smartsupport_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
+  # Nginx Reverse Proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: smartsupport_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/ssl:/etc/nginx/ssl:ro
+    networks:
+      - smartsupport_network
+    depends_on:
+      - fastapi_app
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  smartsupport_network:
+    driver: bridge

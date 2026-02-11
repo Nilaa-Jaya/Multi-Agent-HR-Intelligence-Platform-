@@ -1,0 +1,67 @@
+[flake8]
+# Flake8 configuration for SmartSupport AI
+
+# Maximum line length
+max-line-length = 120
+
+# Maximum complexity
+max-complexity = 15
+
+# Ignore specific errors/warnings
+ignore =
+    # E501: Line too long (handled by black)
+    E501,
+    # W503: Line break before binary operator (conflicts with black)
+    W503,
+    # E203: Whitespace before ':' (conflicts with black)
+    E203,
+    # F401: Module imported but unused (common in __init__.py files)
+    F401,
+    # E402: Module level import not at top of file
+    E402,
+    # W504: Line break after binary operator
+    W504
+
+# Exclude directories
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    env,
+    .env,
+    build,
+    dist,
+    *.egg-info,
+    .pytest_cache,
+    .mypy_cache,
+    .tox,
+    docker,
+    data,
+    notebooks,
+    docs
+
+# File patterns to check
+filename =
+    *.py
+
+# Per-file ignores
+per-file-ignores =
+    __init__.py:F401,F403
+    tests/*:F401,F811
+    conftest.py:F401
+
+# Show source code for each error
+show-source = True
+
+# Show error codes in output
+show-pep8 = True
+
+# Count errors
+count = True
+
+# Statistics
+statistics = True
+
+# Format for error messages
+format = %(path)s:%(row)d:%(col)d: %(code)s %(text)s

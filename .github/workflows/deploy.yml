@@ -1,0 +1,96 @@
+name: Deploy to Railway
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+  workflow_run:
+    workflows: ["Docker Build and Push"]
+    types:
+      - completed
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Only run if Docker build succeeded or manually triggered
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+
+    environment:
+      name: ${{ github.event.inputs.environment || 'production' }}
+      url: https://smartsupport-ai.up.railway.app
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Railway CLI
+      run: |
+        curl -fsSL https://railway.app/install.sh | sh
+        echo "$HOME/.railway/bin" >> $GITHUB_PATH
+
+    - name: Deploy to Railway
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      run: |
+        railway link ${{ secrets.RAILWAY_PROJECT_ID }} || true
+        railway up --detach
+        echo "Deployment initiated to Railway"
+
+    - name: Wait for deployment
+      run: |
+        echo "Waiting 60 seconds for deployment to complete..."
+        sleep 60
+
+    - name: Health check
+      continue-on-error: true
+      run: |
+        HEALTH_URL="${{ secrets.RAILWAY_APP_URL }}/health"
+        echo "Checking health at: $HEALTH_URL"
+
+        for i in {1..10}; do
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" $HEALTH_URL || echo "000")
+          if [ "$RESPONSE" = "200" ]; then
+            echo "Health check passed!"
+            exit 0
+          fi
+          echo "Attempt $i: Health check returned $RESPONSE, retrying..."
+          sleep 10
+        done
+
+        echo "Health check failed after 10 attempts"
+        exit 1
+
+    - name: Run database migrations
+      if: success()
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      run: |
+        echo "Database migrations would run here"
+        # railway run python -m src.knowledge_base.init_kb
+
+    - name: Deployment summary
+      if: always()
+      run: |
+        echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "Environment: \`${{ github.event.inputs.environment || 'production' }}\`" >> $GITHUB_STEP_SUMMARY
+        echo "Deployed by: \`${{ github.actor }}\`" >> $GITHUB_STEP_SUMMARY
+        echo "Commit: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+        if [ "${{ job.status }}" = "success" ]; then
+          echo "Status: ✅ Deployment successful!" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "Status: ❌ Deployment failed!" >> $GITHUB_STEP_SUMMARY
+        fi
+
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "Deployment failed! Check logs for details."
+        # Add Slack/Discord webhook notification here if needed

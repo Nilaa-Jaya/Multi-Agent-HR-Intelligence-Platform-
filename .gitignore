@@ -1,0 +1,10 @@
+tutorial_documentation/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+.pytest_cache/
+.coverage
+htmlcov/
